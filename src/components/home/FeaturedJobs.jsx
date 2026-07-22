@@ -11,9 +11,8 @@ export default function FeaturedJobs() {
           </h2>
 
           <p className="text-gray-600 max-w-2xl mx-auto outfit">
-            Explore exciting freelance opportunities from companies
-            around the world and find the perfect project that matches
-            your skills.
+            Explore exciting freelance opportunities from companies around the
+            world and find the perfect project that matches your skills.
           </p>
         </div>
 

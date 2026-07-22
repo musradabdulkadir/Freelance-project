@@ -11,9 +11,7 @@ export default function CategoryCard({ category }) {
         {category.name}
       </h3>
 
-      <p className="text-gray-500">
-        {category.jobs}+ Jobs Available
-      </p>
+      <p className="text-gray-500">{category.jobs}+ Jobs Available</p>
     </div>
   );
 }
