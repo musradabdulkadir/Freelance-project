@@ -2,28 +2,39 @@ import heroImage from "../../assets/images/heroimg.jpg";
 
 export default function Hero() {
   return (
-    <section className="bg-amber-100 flex flex-col lg:flex-row rounded-2xl justify-between items-center m-10 max-w-7xl mx-auto px-5 py-10 ">
-      <div className="bg-amber-300 rounded-2xl flex-1 p-8 lg:p-20  flex flex-col justify-center">
-        <h1 className="text-4xl lg:text-7xl leading-tight mb-3 outfit">
-          Connect.
-          <br />
-          Collaborate.
-          <br />
-          Create.
-        </h1>
-        <p className="outfit text-sm leading-6">
-          Connect with skilled freelancers or discover exciting opportunities.
-          SkillBridge brings clients and professionals together to build amazing
-          projects with confidence.
-        </p>
-      </div>
+    <section className="bg-amber-50">
+      <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
 
-      <div className=" rounded-2xl flex-1 p-8 lg:p-20 flex flex-col justify-center">
-        <img
-          className="w-full rounded-3xl object-cover shadow-lg"
-          src={heroImage}
-          alt="Freelancer working on laptop"
-        />
+          <div className="outfit">
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 mb-6 outfit">
+              Connect.
+              <br />
+              Collaborate.
+              <br />
+              Create.
+            </h1>
+
+            <p className="text-gray-600 text-sm leading-8 max-w-xl mb-10">
+              Connect with skilled freelancers or discover exciting
+              opportunities. SkillBridge helps businesses and professionals work
+              together, build amazing projects, and grow their careers.
+            </p>
+
+          </div>
+
+          {/* Right Image */}
+
+          <div className="flex justify-center">
+            <img
+              src={heroImage}
+              alt="Freelancer working on laptop"
+              className="w-full max-w-lg rounded-3xl shadow-2xl object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

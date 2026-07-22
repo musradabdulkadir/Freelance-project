@@ -9,9 +9,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-16">
       <div className="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-        {/* Logo */}
+        
 
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 outfit">
           <h2 className="text-3xl font-bold text-amber-400 mb-4 outfit">
             SkillBridge
           </h2>
@@ -23,9 +23,9 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
+        
 
-        <div>
+        <div className="outfit">
           <h3 className="font-semibold text-xl mb-5">Quick Links</h3>
 
           <ul className="space-y-3 text-gray-400">
@@ -47,9 +47,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Company */}
+        
 
-        <div>
+        <div className="outfit">
           <h3 className="font-semibold text-xl mb-5">Company</h3>
 
           <ul className="space-y-3 text-gray-400">
@@ -71,10 +71,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social */}
+        
 
-        <div>
-          <h3 className="font-semibold text-xl mb-5">Follow Us</h3>
+        <div className="outfit">
+          <h3 className="font-semibold text-xl mb-5 ">Follow Us</h3>
 
           <div className="flex gap-4">
             <div className="bg-gray-800 hover:bg-amber-500 transition w-11 h-11 rounded-full flex justify-center items-center cursor-pointer">
@@ -98,12 +98,8 @@ export default function Footer() {
 
       <div className="border-t border-gray-700 mt-12">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-sm outfit">
             © 2026 SkillBridge. All Rights Reserved.
-          </p>
-
-          <p className="text-gray-500 text-sm mt-3 md:mt-0">
-            Designed & Developed with ❤️ using React & Tailwind CSS
           </p>
         </div>
       </div>
