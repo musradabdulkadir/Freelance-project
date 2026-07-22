@@ -20,7 +20,7 @@ const links = [
 ];
 export default function Navbar() {
   return (
-    <nav className="bg-amber-100 p-3 flex items-center justify-between">
+    <nav className="bg-amber-500 p-3 flex items-center justify-between">
       <div>
         <p className="text-4xl font-bold outfit">SkillBridge</p>
       </div>
