@@ -27,8 +27,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-amber-500 shadow-md">
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-
         <Link
           to="/"
           className="text-3xl lg:text-4xl font-bold outfit tracking-wide"
@@ -36,9 +34,7 @@ export default function Navbar() {
           SkillBridge
         </Link>
 
-        {/* Desktop Navigation */}
-
-        <div className="hidden md:flex items-center gap-8 outfit">
+        <div className="hidden lg:flex items-center gap-8 outfit">
           {links.map((link) => (
             <NavLink
               key={link.path}
@@ -56,9 +52,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop Buttons */}
-
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <button className="border border-black px-5 py-2 rounded-xl hover:bg-black hover:text-white transition">
             Login
           </button>
@@ -68,20 +62,16 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Hamburger */}
-
         <button
-          className="md:hidden text-3xl"
+          className="lg:hidden text-3xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-
       {menuOpen && (
-        <div className="md:hidden bg-amber-400 shadow-lg">
+        <div className="lg:hidden bg-amber-400 shadow-lg">
           <div className="flex flex-col px-6 py-4 gap-4 outfit">
             {links.map((link) => (
               <NavLink

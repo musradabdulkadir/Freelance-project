@@ -3,9 +3,7 @@ export default function JobCard({ job }) {
     <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 border border-gray-200">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-semibold text-gray-900">
-            {job.title}
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
 
           <p className="text-gray-500">{job.company}</p>
         </div>
@@ -15,9 +13,7 @@ export default function JobCard({ job }) {
         </span>
       </div>
 
-      <p className="text-lg font-bold text-gray-800 mb-4">
-        {job.budget}
-      </p>
+      <p className="text-lg font-bold text-gray-800 mb-4">{job.budget}</p>
 
       <div className="flex flex-wrap gap-2 mb-5">
         {job.skills.map((skill) => (
@@ -31,9 +27,7 @@ export default function JobCard({ job }) {
       </div>
 
       <div className="flex justify-between items-center">
-        <p className="text-gray-500 text-sm">
-          Posted {job.posted}
-        </p>
+        <p className="text-gray-500 text-sm">Posted {job.posted}</p>
 
         <button className="bg-amber-500 hover:bg-amber-600 text-white px-5 py-2 rounded-xl transition">
           Apply

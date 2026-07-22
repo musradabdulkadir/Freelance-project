@@ -5,10 +5,7 @@ export default function Hero() {
     <section className="bg-amber-50">
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-
           <div className="outfit">
-            
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 mb-6 outfit">
               Connect.
               <br />
@@ -22,10 +19,7 @@ export default function Hero() {
               opportunities. SkillBridge helps businesses and professionals work
               together, build amazing projects, and grow their careers.
             </p>
-
           </div>
-
-          {/* Right Image */}
 
           <div className="flex justify-center">
             <img
