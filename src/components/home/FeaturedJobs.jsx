@@ -17,14 +17,14 @@ export default function FeaturedJobs() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 outfit">
           {jobs.map((job) => (
             <JobCard key={job.id} job={job} />
           ))}
         </div>
 
         <div className="flex justify-center mt-12">
-          <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl transition">
+          <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl transition outfit">
             View All Jobs
           </button>
         </div>
