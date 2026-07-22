@@ -10,7 +10,7 @@ export default function FeaturedJobs() {
             Featured Jobs
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto outfit">
             Explore exciting freelance opportunities from companies
             around the world and find the perfect project that matches
             your skills.
