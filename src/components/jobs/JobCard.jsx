@@ -23,7 +23,7 @@ export default function JobCard({ job }) {
         </p>
 
         <p>
-          <strong>Budget:</strong> {job.budget}
+          <strong>Budget:</strong> {job.budget.toLocaleString()}
         </p>
       </div>
 

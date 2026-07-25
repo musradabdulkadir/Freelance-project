@@ -1,5 +1,6 @@
 import JobCard from "./JobCard";
 import jobs from "../../data/jobs";
+import { Link } from "react-router-dom";
 
 export default function FeaturedJobs() {
   return (
@@ -23,9 +24,12 @@ export default function FeaturedJobs() {
         </div>
 
         <div className="flex justify-center mt-12">
-          <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl transition outfit">
+          <Link
+            to="findjobs"
+            className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-xl transition outfit"
+          >
             View All Jobs
-          </button>
+          </Link>
         </div>
       </div>
     </section>
