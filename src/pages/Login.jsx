@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -13,18 +15,34 @@ export default function Login() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const user = JSON.parse(localStorage.getItem("user"));
 
-    // Later:
-    // Send login data to backend
+    if (!user) {
+      alert("No account found. Please register first.");
+      return;
+    }
+
+    if (data.email === user.email && data.password === user.password) {
+      // Store login status
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+      alert("Login Successful!");
+
+      if (user.role === "client") {
+        navigate("/client");
+      } else if (user.role === "freelancer") {
+        navigate("/freelancer");
+      }
+    } else {
+      alert("Invalid Email or Password");
+    }
   };
 
   return (
     <section className="min-h-screen bg-amber-50 flex justify-center items-center px-6 py-12 outfit">
       <div className="bg-white shadow-xl rounded-3xl p-8 md:p-10 w-full max-w-md">
-        <h1 className="text-4xl font-bold text-center outfit mb-2">
-          Welcome Back
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-2">Welcome Back</h1>
 
         <p className="text-center text-gray-500 mb-8">
           Login to your SkillBridge account

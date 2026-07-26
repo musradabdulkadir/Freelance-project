@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -17,18 +19,24 @@ export default function Register() {
   const password = watch("password");
 
   const onSubmit = (data) => {
-    console.log(data);
+    const existingUser = JSON.parse(localStorage.getItem("user"));
 
-    // Later:
-    // Send data to backend
+    if (existingUser && existingUser.email === data.email) {
+      alert("An account with this email already exists.");
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(data));
+
+    alert("Registration Successful!");
+
+    navigate("/login");
   };
 
   return (
     <section className="min-h-screen bg-amber-50 flex justify-center items-center px-6 py-12 outfit">
       <div className="bg-white shadow-xl rounded-3xl p-8 md:p-10 w-full max-w-lg">
-        <h1 className="text-4xl font-bold text-center outfit mb-2">
-          Create Account
-        </h1>
+        <h1 className="text-4xl font-bold text-center mb-2">Create Account</h1>
 
         <p className="text-center text-gray-500 mb-8">
           Join SkillBridge and start your freelancing journey.
@@ -41,7 +49,7 @@ export default function Register() {
             <input
               type="text"
               placeholder="Enter your full name"
-              className="w-full border rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-500 outline-none"
+              className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
               {...register("name", {
                 required: "Full name is required",
               })}
@@ -58,7 +66,7 @@ export default function Register() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full border rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-500 outline-none"
+              className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
               {...register("email", {
                 required: "Email is required",
                 pattern: {
@@ -79,7 +87,7 @@ export default function Register() {
             <label className="block mb-2 font-medium">Register As</label>
 
             <select
-              className="w-full border rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-500 outline-none"
+              className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
               {...register("role", {
                 required: "Please select a role",
               })}
@@ -101,7 +109,7 @@ export default function Register() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter password"
-                className="w-full border rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-500 outline-none"
+                className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
                 {...register("password", {
                   required: "Password is required",
                   minLength: {
@@ -134,7 +142,7 @@ export default function Register() {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Confirm password"
-                className="w-full border rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber-500 outline-none"
+                className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
                 {...register("confirmPassword", {
                   required: "Confirm your password",
                   validate: (value) =>
@@ -162,7 +170,7 @@ export default function Register() {
             <input
               type="checkbox"
               {...register("terms", {
-                required: "You must accept the terms & conditions",
+                required: "You must accept the Terms & Conditions",
               })}
             />
             I agree to the Terms & Conditions

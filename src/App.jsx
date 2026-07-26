@@ -8,6 +8,10 @@ import FindJobs from "./pages/FindJobs";
 import JobDetails from "./pages/JobDetails";
 import Freelancers from "./pages/Freelancers";
 import FreelancerDetails from "./pages/FreelancerDetails";
+import ClientDashboard from "./pages/ClientDashboard";
+import FreelancerDashboard from "./pages/FreelancerDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
+import RoleProtectedRoute from "./components/auth/RoleProtectedRoute";
 
 function App() {
   return (
@@ -21,6 +25,30 @@ function App() {
         <Route path="jobs/:id" element={<JobDetails />} />
         <Route path="freelancers" element={<Freelancers />} />
         <Route path="freelancers/:id" element={<FreelancerDetails />} />
+        <Route
+          path="client"
+          element={
+            <RoleProtectedRoute allowedRole="client">
+              <ClientDashboard />
+            </RoleProtectedRoute>
+          }
+        />
+        <Route
+          path="freelancer"
+          element={
+            <RoleProtectedRoute allowedRole="freelancer">
+              <FreelancerDashboard />
+            </RoleProtectedRoute>
+          }
+        />
+        <Route
+          path="admin"
+          element={
+            <RoleProtectedRoute allowedRole="admin">
+              <AdminDashboard />
+            </RoleProtectedRoute>
+          }
+        />
       </Route>
     </Routes>
   );
