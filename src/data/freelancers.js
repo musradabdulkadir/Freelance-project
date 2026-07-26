@@ -9,6 +9,8 @@ const freelancers = [
     rating: 4.9,
     completedProjects: 120,
     skills: ["React", "JavaScript", "Tailwind CSS"],
+    about:
+      "Frontend React developer with over 6 years of experience building fast, responsive, and user-friendly web applications. Passionate about creating clean interfaces, reusable components, and exceptional user experiences.",
     image: "https://i.pravatar.cc/300?img=1",
   },
   {
@@ -21,6 +23,8 @@ const freelancers = [
     rating: 4.8,
     completedProjects: 95,
     skills: ["Figma", "Adobe XD", "UI Design"],
+    about:
+      "Creative UI/UX designer focused on crafting modern, intuitive, and visually appealing digital products. Experienced in wireframing, prototyping, and designing interfaces that improve user satisfaction.",
     image: "https://i.pravatar.cc/300?img=5",
   },
   {
@@ -33,6 +37,8 @@ const freelancers = [
     rating: 4.9,
     completedProjects: 160,
     skills: ["Node.js", "Express", "MongoDB"],
+    about:
+      "Backend engineer specializing in Node.js, Express, and MongoDB. Experienced in developing secure REST APIs, authentication systems, and scalable backend architectures for modern applications.",
     image: "https://i.pravatar.cc/300?img=8",
   },
   {
@@ -45,6 +51,8 @@ const freelancers = [
     rating: 4.6,
     completedProjects: 60,
     skills: ["Photoshop", "Illustrator", "Branding"],
+    about:
+      "Graphic designer passionate about creating memorable brand identities, marketing materials, and social media graphics. Dedicated to delivering creative and impactful visual solutions.",
     image: "https://i.pravatar.cc/300?img=9",
   },
   {
@@ -57,6 +65,8 @@ const freelancers = [
     rating: 4.7,
     completedProjects: 88,
     skills: ["Flutter", "Dart", "Firebase"],
+    about:
+      "Flutter developer experienced in building cross-platform mobile applications with clean architecture and Firebase integration. Focused on performance and smooth user experiences.",
     image: "https://i.pravatar.cc/300?img=10",
   },
   {
@@ -69,6 +79,8 @@ const freelancers = [
     rating: 5.0,
     completedProjects: 170,
     skills: ["Python", "Django", "REST API"],
+    about:
+      "Python developer with strong experience in Django, REST APIs, automation, and backend development. Passionate about writing clean, efficient, and scalable code.",
     image: "https://i.pravatar.cc/300?img=11",
   },
   {
@@ -81,6 +93,8 @@ const freelancers = [
     rating: 4.9,
     completedProjects: 145,
     skills: ["Docker", "Kubernetes", "AWS"],
+    about:
+      "DevOps engineer helping teams automate deployments, manage cloud infrastructure, and build reliable CI/CD pipelines using Docker, Kubernetes, and AWS technologies.",
     image: "https://i.pravatar.cc/300?img=12",
   },
   {
@@ -93,6 +107,8 @@ const freelancers = [
     rating: 4.5,
     completedProjects: 75,
     skills: ["SEO", "Blog Writing", "Research"],
+    about:
+      "Content writer specializing in SEO articles, blogs, website copy, and technical documentation. Dedicated to creating engaging content that increases traffic and delivers value to readers.",
     image: "https://i.pravatar.cc/300?img=13",
   },
   {
@@ -105,6 +121,8 @@ const freelancers = [
     rating: 4.8,
     completedProjects: 105,
     skills: ["SEO", "Google Analytics", "Marketing"],
+    about:
+      "SEO expert helping businesses improve search rankings through keyword research, on-page optimization, technical SEO, and performance analysis for long-term organic growth.",
     image: "https://i.pravatar.cc/300?img=14",
   },
   {
@@ -117,6 +135,8 @@ const freelancers = [
     rating: 5.0,
     completedProjects: 185,
     skills: ["Cyber Security", "Firewalls", "Pen Testing"],
+    about:
+      "Cybersecurity professional with extensive experience in penetration testing, vulnerability assessments, network security, and implementing best practices to protect digital systems.",
     image: "https://i.pravatar.cc/300?img=15",
   },
   {
@@ -129,6 +149,8 @@ const freelancers = [
     rating: 4.9,
     completedProjects: 150,
     skills: ["TensorFlow", "Python", "Machine Learning"],
+    about:
+      "Machine Learning engineer building intelligent AI systems using Python, TensorFlow, and data-driven algorithms. Passionate about solving complex problems through artificial intelligence.",
     image: "https://i.pravatar.cc/300?img=16",
   },
   {
@@ -141,6 +163,8 @@ const freelancers = [
     rating: 4.7,
     completedProjects: 97,
     skills: ["Laravel", "PHP", "MySQL"],
+    about:
+      "Laravel developer experienced in developing secure PHP applications, custom admin panels, REST APIs, and scalable web platforms using modern development practices.",
     image: "https://i.pravatar.cc/300?img=17",
   },
   {
@@ -153,6 +177,8 @@ const freelancers = [
     rating: 4.8,
     completedProjects: 138,
     skills: ["Java", "Spring Boot", "React"],
+    about:
+      "Full Stack Java developer with strong experience in Spring Boot, React, REST APIs, and enterprise software development. Focused on delivering reliable and scalable business applications.",
     image: "https://i.pravatar.cc/300?img=18",
   },
   {
@@ -165,6 +191,8 @@ const freelancers = [
     rating: 4.7,
     completedProjects: 82,
     skills: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
+    about:
+      "Professional video editor creating promotional videos, YouTube content, advertisements, and social media reels with a focus on storytelling and high-quality post-production.",
     image: "https://i.pravatar.cc/300?img=19",
   },
   {
@@ -177,6 +205,8 @@ const freelancers = [
     rating: 5.0,
     completedProjects: 140,
     skills: ["Prompt Engineering", "ChatGPT", "Python"],
+    about:
+      "AI Prompt Engineer specializing in large language models, prompt optimization, and AI workflow automation. Passionate about helping businesses improve productivity with practical AI solutions.",
     image: "https://i.pravatar.cc/300?img=20",
   },
   {
@@ -189,6 +219,8 @@ const freelancers = [
     rating: 4.6,
     completedProjects: 64,
     skills: ["WordPress", "PHP", "Elementor"],
+    about:
+      "WordPress developer experienced in building responsive business websites, blogs, and eCommerce stores. Skilled in Elementor customization, WooCommerce, and performance optimization.",
     image: "https://i.pravatar.cc/300?img=21",
   },
   {
@@ -201,6 +233,8 @@ const freelancers = [
     rating: 4.8,
     completedProjects: 90,
     skills: ["SQL", "Power BI", "Excel"],
+    about:
+      "Data analyst with expertise in SQL, Excel, and Power BI. Experienced in transforming raw data into meaningful insights that help organizations make informed business decisions.",
     image: "https://i.pravatar.cc/300?img=22",
   },
   {
@@ -213,6 +247,8 @@ const freelancers = [
     rating: 4.7,
     completedProjects: 102,
     skills: ["Vue.js", "JavaScript", "CSS"],
+    about:
+      "Vue.js developer focused on building responsive, high-performance web applications using reusable components and modern frontend development practices.",
     image: "https://i.pravatar.cc/300?img=23",
   },
   {
@@ -225,6 +261,8 @@ const freelancers = [
     rating: 4.9,
     completedProjects: 132,
     skills: ["SEO", "Google Ads", "Social Media"],
+    about:
+      "Digital marketing specialist with expertise in SEO, Google Ads, content marketing, and social media campaigns. Dedicated to helping brands increase visibility and generate qualified leads.",
     image: "https://i.pravatar.cc/300?img=24",
   },
   {
@@ -237,6 +275,8 @@ const freelancers = [
     rating: 5.0,
     completedProjects: 176,
     skills: ["Flutter", "Kotlin", "Firebase"],
+    about:
+      "Mobile application developer specializing in Flutter and native Android development. Experienced in delivering scalable, high-performance mobile applications with intuitive user experiences.",
     image: "https://i.pravatar.cc/300?img=25",
   },
 ];
