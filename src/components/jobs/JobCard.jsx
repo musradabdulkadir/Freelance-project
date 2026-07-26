@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function JobCard({ job }) {
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-6 border border-gray-200 outfit">
@@ -39,9 +41,12 @@ export default function JobCard({ job }) {
       </div>
 
       <div className="flex justify-between items-center">
-        <button className="bg-black text-white px-5 py-2 rounded-xl hover:bg-gray-800 transition">
+        <Link
+          to={`/jobs/${job.id}`}
+          className="bg-black text-white px-5 py-2 rounded-xl hover:bg-gray-800 transition"
+        >
           View Details
-        </button>
+        </Link>
 
         <button className="border border-black px-5 py-2 rounded-xl hover:bg-black hover:text-white transition">
           Apply

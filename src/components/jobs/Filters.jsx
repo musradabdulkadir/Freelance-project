@@ -77,7 +77,6 @@ export default function Filters({
           className="border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
         >
           <option value="">Sort By</option>
-          <option value="latest">Latest</option>
           <option value="budget-high">Budget: High to Low</option>
           <option value="budget-low">Budget: Low to High</option>
         </select>
