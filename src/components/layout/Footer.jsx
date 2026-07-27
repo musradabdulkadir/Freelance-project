@@ -22,50 +22,6 @@ export default function Footer() {
         </div>
 
         <div className="outfit">
-          <h3 className="font-semibold text-xl mb-5">Quick Links</h3>
-
-          <ul className="space-y-3 text-gray-400">
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Home
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Find Jobs
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Categories
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              About
-            </li>
-          </ul>
-        </div>
-
-        <div className="outfit">
-          <h3 className="font-semibold text-xl mb-5">Company</h3>
-
-          <ul className="space-y-3 text-gray-400">
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              About Us
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Careers
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Contact
-            </li>
-
-            <li className="hover:text-amber-400 cursor-pointer transition">
-              Privacy Policy
-            </li>
-          </ul>
-        </div>
-
-        <div className="outfit">
           <h3 className="font-semibold text-xl mb-5 ">Follow Us</h3>
 
           <div className="flex gap-4">

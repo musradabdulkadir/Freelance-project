@@ -1,8 +1,8 @@
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-r from-amber-400 to-amber-600 py-24">
+    <section className="bg-gradient-to-r from-amber-400 to-amber-600 py-24 outfit">
       <div className="max-w-7xl mx-auto px-6 text-center text-white">
-        <h1 className="text-5xl lg:text-7xl font-bold outfit mb-6">
+        <h1 className="text-5xl lg:text-7xl font-bold mb-6">
           About SkillBridge
         </h1>
 
