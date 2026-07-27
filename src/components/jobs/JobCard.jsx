@@ -6,7 +6,6 @@ export default function JobCard({ job }) {
       <div className="flex justify-between items-start mb-4">
         <div>
           <h2 className="text-2xl font-semibold">{job.title}</h2>
-
           <p className="text-gray-500">{job.company}</p>
         </div>
 

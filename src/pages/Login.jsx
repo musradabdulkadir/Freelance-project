@@ -23,7 +23,6 @@ export default function Login() {
     }
 
     if (data.email === user.email && data.password === user.password) {
-      // Store login status
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("loggedInUser", JSON.stringify(user));
 

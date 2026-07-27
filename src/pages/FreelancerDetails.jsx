@@ -46,7 +46,7 @@ export default function FreelancerDetails() {
 
             <div className="lg:w-2/3">
               <h2 className="text-2xl font-bold mb-6">
-                Freelancer Information
+                About Freelancer
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
