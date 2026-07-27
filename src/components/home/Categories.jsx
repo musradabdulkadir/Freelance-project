@@ -7,7 +7,7 @@ export default function Categories() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 outfit">
-            Browse Categories
+            Categories
           </h2>
 
           <p className="text-gray-600 max-w-2xl mx-auto outfit">

@@ -10,8 +10,6 @@ export default function CategoryCard({ category }) {
       <h3 className="text-xl font-semibold text-gray-900 mb-2">
         {category.name}
       </h3>
-
-      <p className="text-gray-500">{category.jobs}+ Jobs Available</p>
     </div>
   );
 }

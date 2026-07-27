@@ -94,13 +94,19 @@ export default function Navbar() {
 
             <hr className="border-gray-400" />
 
-            <button className="border border-black py-2 rounded-xl">
+            <Link
+              to="login"
+              className="border text-center border-black py-2 rounded-xl"
+            >
               Login
-            </button>
+            </Link>
 
-            <button className="bg-black text-white py-2 rounded-xl">
+            <Link
+              to="register"
+              className="text-center bg-black text-white py-2 rounded-xl"
+            >
               Register
-            </button>
+            </Link>
           </div>
         </div>
       )}
