@@ -59,7 +59,7 @@ export default function ManageUsers() {
       </div>
 
       <div className="bg-white rounded-xl shadow overflow-hidden">
-        <table className="w-full">
+        <table className="min-w-[900px] w-full">
           <thead className="bg-gray-100">
             <tr>
               <th className="text-left p-4">Name</th>
