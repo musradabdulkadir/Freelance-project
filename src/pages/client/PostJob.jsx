@@ -28,11 +28,10 @@ export default function PostJob() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-xl shadow p-8 outfit">
-      <h1 className="text-3xl font-bold mb-8">Post a New Job</h1>
+    <div className="max-w-4xl mx-auto bg-white rounded-xl shadow p-4 sm:p-6 md:p-8 outfit">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-8">Post a New Job</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* Job Title */}
         <div>
           <label className="block mb-2 font-medium">Job Title</label>
 
@@ -45,12 +44,11 @@ export default function PostJob() {
           />
 
           {errors.title && (
-            <p className="text-red-500 text-sm">{errors.title.message}</p>
+            <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
           )}
         </div>
 
-        {/* Company & Category */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label className="block mb-2 font-medium">Company</label>
 
@@ -60,6 +58,12 @@ export default function PostJob() {
                 required: "Company is required",
               })}
             />
+
+            {errors.company && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.company.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -79,8 +83,7 @@ export default function PostJob() {
           </div>
         </div>
 
-        {/* Location & Experience */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label className="block mb-2 font-medium">Location</label>
 
@@ -90,6 +93,12 @@ export default function PostJob() {
                 required: "Location is required",
               })}
             />
+
+            {errors.location && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.location.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -107,8 +116,7 @@ export default function PostJob() {
           </div>
         </div>
 
-        {/* Job Type & Salary */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label className="block mb-2 font-medium">Job Type</label>
 
@@ -133,11 +141,16 @@ export default function PostJob() {
                 required: "Salary is required",
               })}
             />
+
+            {errors.salary && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.salary.message}
+              </p>
+            )}
           </div>
         </div>
 
-        {/* Vacancies & Deadline */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label className="block mb-2 font-medium">Vacancies</label>
 
@@ -161,7 +174,6 @@ export default function PostJob() {
           </div>
         </div>
 
-        {/* Skills */}
         <div>
           <label className="block mb-2 font-medium">
             Skills (comma separated)
@@ -174,20 +186,28 @@ export default function PostJob() {
           />
         </div>
 
-        {/* Description */}
         <div>
           <label className="block mb-2 font-medium">Job Description</label>
 
           <textarea
             rows={6}
-            className="w-full border rounded-lg px-4 py-3"
+            className="w-full border rounded-lg px-4 py-3 resize-none"
             {...register("description", {
               required: "Description is required",
             })}
           />
+
+          {errors.description && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.description.message}
+            </p>
+          )}
         </div>
 
-        <button className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800">
+        <button
+          type="submit"
+          className="w-full sm:w-auto bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition"
+        >
           Post Job
         </button>
       </form>
