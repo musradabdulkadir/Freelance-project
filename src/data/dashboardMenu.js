@@ -9,6 +9,8 @@ import {
   FaClipboardList,
   FaMoneyBillWave,
   FaUser,
+  FaPlusCircle,
+  FaWallet,
 } from "react-icons/fa";
 
 export const adminMenu = [
@@ -53,22 +55,22 @@ export const clientMenu = [
   {
     title: "Post Job",
     path: "/client/post-job",
-    icon: FaBriefcase,
+    icon: FaPlusCircle,
   },
   {
     title: "My Jobs",
     path: "/client/my-jobs",
-    icon: FaClipboardList,
+    icon: FaBriefcase,
   },
   {
     title: "Applications",
     path: "/client/applications",
-    icon: FaUsers,
+    icon: FaClipboardList,
   },
   {
     title: "Payments",
     path: "/client/payments",
-    icon: FaMoneyBillWave,
+    icon: FaWallet,
   },
   {
     title: "Profile",

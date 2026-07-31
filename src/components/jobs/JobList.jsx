@@ -1,4 +1,4 @@
-import jobs from "../../data/jobs";
+import { getApprovedJobs } from "../../services/jobService";
 import JobCard from "./JobCard";
 
 export default function JobList({
@@ -10,6 +10,8 @@ export default function JobList({
   sortBy,
 }) {
   // Filter Jobs
+  const jobs = getApprovedJobs();
+
   const filteredJobs = jobs.filter((job) => {
     // Category
     const categoryMatch = category === "" || job.category === category;
@@ -24,13 +26,13 @@ export default function JobList({
     let budgetMatch = true;
 
     if (budget === "0-500") {
-      budgetMatch = job.budget >= 0 && job.budget <= 500;
+      budgetMatch = job.salary >= 0 && job.salary <= 500;
     } else if (budget === "501-1000") {
-      budgetMatch = job.budget >= 501 && job.budget <= 1000;
+      budgetMatch = job.salary >= 501 && job.salary <= 1000;
     } else if (budget === "1001-2000") {
-      budgetMatch = job.budget >= 1001 && job.budget <= 2000;
+      budgetMatch = job.salary >= 1001 && job.salary <= 2000;
     } else if (budget === "2000+") {
-      budgetMatch = job.budget > 2000;
+      budgetMatch = job.salary > 2000;
     }
 
     // Search
@@ -38,9 +40,10 @@ export default function JobList({
       search === "" ||
       job.title.toLowerCase().includes(search.toLowerCase()) ||
       job.company.toLowerCase().includes(search.toLowerCase()) ||
-      job.skills.some((skill) =>
-        skill.toLowerCase().includes(search.toLowerCase()),
-      );
+      (job.skills &&
+        job.skills.some((skill) =>
+          skill.toLowerCase().includes(search.toLowerCase()),
+        ));
 
     return (
       categoryMatch &&

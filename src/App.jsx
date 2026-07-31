@@ -25,9 +25,18 @@ import Settings from "./pages/admin/Settings";
 
 // Client Pages
 import ClientDashboard from "./pages/client/Dashboard";
+import PostJob from "./pages/client/PostJob";
+import MyJobs from "./pages/client/MyJobs";
+import Applications from "./pages/client/Applications";
+import Payments from "./pages/client/Payments";
+import Profile from "./pages/client/Profile";
 
 // Freelancer Pages
 import FreelancerDashboard from "./pages/freelancer/Dashboard";
+import BrowseJobs from "./pages/freelancer/BrowseJobs";
+import AppliedJobs from "./pages/freelancer/AppliedJobs";
+import AcceptedJobs from "./pages/freelancer/AcceptedJobs";
+import SubmitWork from "./pages/freelancer/SubmitWork";
 
 function App() {
   return (
@@ -72,6 +81,12 @@ function App() {
         }
       >
         <Route index element={<ClientDashboard />} />
+        <Route path="dashboard" element={<ClientDashboard />} />
+        <Route path="post-job" element={<PostJob />} />
+        <Route path="my-jobs" element={<MyJobs />} />
+        <Route path="applications" element={<Applications />} />
+        <Route path="payments" element={<Payments />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
 
       {/* Freelancer Dashboard */}
@@ -84,6 +99,13 @@ function App() {
         }
       >
         <Route index element={<FreelancerDashboard />} />
+        <Route path="dashboard" element={<FreelancerDashboard />} />
+        <Route path="browse-jobs" element={<BrowseJobs />} />
+        <Route path="applied-jobs" element={<AppliedJobs />} />
+        <Route path="accepted-jobs" element={<AcceptedJobs />} />
+        <Route path="payments" element={<Payments />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="submit-work" element={<SubmitWork />} />
       </Route>
     </Routes>
   );

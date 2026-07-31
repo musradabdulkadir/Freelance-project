@@ -24,12 +24,20 @@ export default function JobCard({ job }) {
         </p>
 
         <p>
-          <strong>Budget:</strong> {job.budget.toLocaleString()}
+          <strong>Job Type:</strong> {job.jobType}
+        </p>
+
+        <p>
+          <strong>Salary:</strong> ₹{job.salary.toLocaleString()}
+        </p>
+
+        <p>
+          <strong>Vacancies:</strong> {job.vacancies}
         </p>
       </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
-        {job.skills.map((skill) => (
+        {job.skills?.map((skill) => (
           <span
             key={skill}
             className="bg-gray-100 px-3 py-1 rounded-full text-sm"
