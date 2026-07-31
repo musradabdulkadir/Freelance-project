@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { registerUser } from "../../services/authService";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -19,16 +20,20 @@ export default function Register() {
   const password = watch("password");
 
   const onSubmit = (data) => {
-    const existingUser = JSON.parse(localStorage.getItem("user"));
+    const result = registerUser(data);
 
-    if (existingUser && existingUser.email === data.email) {
-      alert("An account with this email already exists.");
+    if (!result.success) {
+      alert(result.message);
       return;
     }
 
-    localStorage.setItem("user", JSON.stringify(data));
-
-    alert("Registration Successful!");
+    if (result.user.role === "freelancer") {
+      alert(
+        "Registration successful.\n\nYour account is waiting for Admin approval.",
+      );
+    } else {
+      alert("Registration successful.");
+    }
 
     navigate("/login");
   };

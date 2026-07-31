@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import SearchBar from "../components/freelancers/SearchBar";
-import Filters from "../components/freelancers/Filters";
-import FreelancerList from "../components/freelancers/FreelancerList";
+import SearchBar from "../../components/freelancers/SearchBar";
+import Filters from "../../components/freelancers/Filters";
+import FreelancerList from "../../components/freelancers/FreelancerList";
 
 export default function Freelancers() {
   const [search, setSearch] = useState("");
@@ -14,7 +14,6 @@ export default function Freelancers() {
   return (
     <section className="bg-gray-50 min-h-screen py-10 outfit">
       <div className="max-w-7xl mx-auto px-6">
-
         <div className="mb-10">
           <h1 className="text-5xl font-bold outfit">Find Freelancers</h1>
 
@@ -24,9 +23,7 @@ export default function Freelancers() {
           </p>
         </div>
 
-
         <SearchBar search={search} setSearch={setSearch} />
-
 
         <Filters
           location={location}
@@ -38,7 +35,6 @@ export default function Freelancers() {
           sortBy={sortBy}
           setSortBy={setSortBy}
         />
-
 
         <FreelancerList
           search={search}

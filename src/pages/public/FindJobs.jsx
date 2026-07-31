@@ -1,6 +1,6 @@
-import SearchBar from "../components/jobs/SearchBar";
-import Filters from "../components/jobs/Filters";
-import JobList from "../components/jobs/JobList";
+import SearchBar from "../../components/jobs/SearchBar";
+import Filters from "../../components/jobs/Filters";
+import JobList from "../../components/jobs/JobList";
 import { useState } from "react";
 
 export default function FindJobs() {

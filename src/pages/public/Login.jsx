@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { loginUser } from "../../services/authService";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -15,26 +16,30 @@ export default function Login() {
   } = useForm();
 
   const onSubmit = (data) => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    const result = loginUser(data.email, data.password);
 
-    if (!user) {
-      alert("No account found. Please register first.");
+    if (!result.success) {
+      alert(result.message);
       return;
     }
 
-    if (data.email === user.email && data.password === user.password) {
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("loggedInUser", JSON.stringify(user));
+    alert("Login Successful!");
 
-      alert("Login Successful!");
+    switch (result.user.role) {
+      case "admin":
+        navigate("/admin");
+        break;
 
-      if (user.role === "client") {
+      case "client":
         navigate("/client");
-      } else if (user.role === "freelancer") {
+        break;
+
+      case "freelancer":
         navigate("/freelancer");
-      }
-    } else {
-      alert("Invalid Email or Password");
+        break;
+
+      default:
+        navigate("/");
     }
   };
 

@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import freelancers from "../data/freelancers";
+import freelancers from "../../data/freelancers";
 
 export default function FreelancerDetails() {
   const { id } = useParams();
@@ -45,9 +45,7 @@ export default function FreelancerDetails() {
             </div>
 
             <div className="lg:w-2/3">
-              <h2 className="text-2xl font-bold mb-6">
-                About Freelancer
-              </h2>
+              <h2 className="text-2xl font-bold mb-6">About Freelancer</h2>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-100 p-5 rounded-xl">
