@@ -52,28 +52,46 @@ export function registerUser(data) {
   };
 }
 
-export function getPendingFreelancers() {
+export function loginUser(email, password) {
   const users = getUsers();
 
-  return users.filter(
-    (user) => user.role === "freelancer" && user.status === "pending",
-  );
-}
-
-export function approveFreelancer(id) {
-  const users = getUsers();
-
-  const updatedUsers = users.map((user) =>
-    user.id === id ? { ...user, status: "approved" } : user,
+  const user = users.find(
+    (u) =>
+      u.email.toLowerCase() === email.toLowerCase() && u.password === password,
   );
 
-  saveUsers(updatedUsers);
+  if (!user) {
+    return {
+      success: false,
+      message: "Invalid email or password.",
+    };
+  }
+
+  if (user.role === "freelancer" && user.status !== "approved") {
+    return {
+      success: false,
+      message: "Your account is waiting for Admin approval.",
+    };
+  }
+
+  localStorage.setItem("loggedInUser", JSON.stringify(user));
+  localStorage.setItem("isLoggedIn", "true");
+
+  return {
+    success: true,
+    user,
+  };
 }
 
-export function deleteUser(id) {
-  const users = getUsers();
+export function logoutUser() {
+  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("isLoggedIn");
+}
 
-  const updatedUsers = users.filter((user) => user.id !== id);
+export function getLoggedInUser() {
+  return JSON.parse(localStorage.getItem("loggedInUser"));
+}
 
-  saveUsers(updatedUsers);
+export function isLoggedIn() {
+  return localStorage.getItem("isLoggedIn") === "true";
 }

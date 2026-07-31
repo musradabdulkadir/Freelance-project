@@ -4,7 +4,7 @@ import {
   approveFreelancer,
   deleteUser,
   getPendingFreelancers,
-} from "../../services/authService";
+} from "../../services/userService";
 
 export default function FreelancerApproval() {
   const [freelancers, setFreelancers] = useState([]);
