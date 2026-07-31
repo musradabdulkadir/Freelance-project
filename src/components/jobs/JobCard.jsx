@@ -54,10 +54,6 @@ export default function JobCard({ job }) {
         >
           View Details
         </Link>
-
-        <button className="border border-black px-5 py-2 rounded-xl hover:bg-black hover:text-white transition">
-          Apply
-        </button>
       </div>
     </div>
   );

@@ -117,9 +117,25 @@ export default function Register() {
                 className="w-full border rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500"
                 {...register("password", {
                   required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be at least 6 characters",
+                  validate: {
+                    length: (value) =>
+                      value.length >= 8 ||
+                      "Password must be at least 8 characters",
+
+                    uppercase: (value) =>
+                      /[A-Z]/.test(value) ||
+                      "Must contain at least one uppercase letter",
+
+                    lowercase: (value) =>
+                      /[a-z]/.test(value) ||
+                      "Must contain at least one lowercase letter",
+
+                    number: (value) =>
+                      /\d/.test(value) || "Must contain at least one number",
+
+                    special: (value) =>
+                      /[@$!%*?&^#()_+\-=[\]{};':"\\|,.<>/?]/.test(value) ||
+                      "Must contain at least one special character",
                   },
                 })}
               />
@@ -134,10 +150,12 @@ export default function Register() {
             </div>
 
             {errors.password && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="text-red-500 text-sm mt-2">
                 {errors.password.message}
               </p>
             )}
+
+            
           </div>
 
           <div>

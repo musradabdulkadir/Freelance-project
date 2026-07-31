@@ -5,7 +5,7 @@ export default function StatCard({
   color = "bg-blue-500",
 }) {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+    <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition outfit">
       <div className="flex justify-between items-center">
         <div>
           <p className="text-gray-500 text-sm">{title}</p>

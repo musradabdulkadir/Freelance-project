@@ -21,17 +21,11 @@ export function createJob(jobData) {
     category: jobData.category,
     location: jobData.location,
     experience: jobData.experience,
-
     jobType: jobData.jobType,
-
     salary: Number(jobData.salary),
-
     vacancies: Number(jobData.vacancies),
-
     deadline: jobData.deadline,
-
     skills: jobData.skills,
-
     description: jobData.description,
 
     clientId: loggedInUser.id,
@@ -43,7 +37,6 @@ export function createJob(jobData) {
   };
 
   jobs.push(newJob);
-
   saveJobs(jobs);
 
   return newJob;
@@ -53,13 +46,56 @@ export function getClientJobs(clientId) {
   return getJobs().filter((job) => job.clientId === clientId);
 }
 
+export function getCurrentClientJobs() {
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (!loggedInUser) return [];
+
+  return getJobs().filter((job) => job.clientId === loggedInUser.id);
+}
+
 export function getPendingJobs() {
   return getJobs().filter((job) => job.status === "pending");
 }
 
+export function getApprovedJobs() {
+  return getJobs().filter((job) => job.status === "approved");
+}
+
 export function approveJob(id) {
   const jobs = getJobs().map((job) =>
-    job.id === id ? { ...job, status: "approved" } : job,
+    job.id === id
+      ? {
+          ...job,
+          status: "approved",
+        }
+      : job,
+  );
+
+  saveJobs(jobs);
+}
+
+export function closeJob(jobId) {
+  const jobs = getJobs().map((job) =>
+    job.id === jobId
+      ? {
+          ...job,
+          status: "closed",
+        }
+      : job,
+  );
+
+  saveJobs(jobs);
+}
+
+export function reopenJob(jobId) {
+  const jobs = getJobs().map((job) =>
+    job.id === jobId
+      ? {
+          ...job,
+          status: "approved",
+        }
+      : job,
   );
 
   saveJobs(jobs);
@@ -69,16 +105,4 @@ export function deleteJob(id) {
   const jobs = getJobs().filter((job) => job.id !== id);
 
   saveJobs(jobs);
-}
-
-export function getApprovedJobs() {
-  return getJobs().filter((job) => job.status === "approved");
-}
-
-export function getCurrentClientJobs() {
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-  if (!loggedInUser) return [];
-
-  return getJobs().filter((job) => job.clientId === loggedInUser.id);
 }

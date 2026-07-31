@@ -1,5 +1,12 @@
 const USERS_KEY = "users";
 
+export function isStrongPassword(password) {
+  const regex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+
+  return regex.test(password);
+}
+
 export function getUsers() {
   return JSON.parse(localStorage.getItem(USERS_KEY)) || [];
 }
@@ -9,6 +16,13 @@ export function saveUsers(users) {
 }
 
 export function registerUser(data) {
+  if (!isStrongPassword(data.password)) {
+    return {
+      success: false,
+      message:
+        "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character.",
+    };
+  }
   const users = getUsers();
 
   // Create default admin

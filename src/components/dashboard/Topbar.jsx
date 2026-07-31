@@ -16,7 +16,7 @@ export default function Topbar() {
   };
 
   return (
-    <header className="bg-white shadow px-8 py-4 flex justify-between items-center">
+    <header className="bg-white shadow px-8 py-4 flex justify-between items-center outfit">
       <div>
         <h2 className="text-xl font-bold">Welcome, {user?.name}</h2>
 

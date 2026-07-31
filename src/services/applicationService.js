@@ -1,3 +1,5 @@
+import { closeJob } from "./jobService";
+
 const APPLICATIONS_KEY = "applications";
 
 export function getApplications() {
@@ -32,29 +34,27 @@ export function createApplication(job) {
     id: Date.now(),
 
     jobId: job.id,
-
     jobTitle: job.title,
-
     company: job.company,
 
     clientId: job.clientId,
-
     clientName: job.clientName,
 
     freelancerId: loggedInUser.id,
-
     freelancerName: loggedInUser.name,
 
     status: "pending",
 
     appliedAt: new Date().toISOString(),
 
-    // Work Submission Fields
+    // Work Submission
     workStatus: "accepted",
     projectUrl: "",
     githubUrl: "",
     message: "",
     submittedAt: "",
+
+    rejectionReason: "",
   };
 
   applications.push(newApplication);
@@ -96,23 +96,53 @@ export function updateApplicationStatus(id, status) {
 }
 
 export function acceptApplication(id) {
-  const applications = getApplications().map((application) =>
-    application.id === id
-      ? {
-          ...application,
-          status: "accepted",
-          workStatus: "accepted",
-        }
-      : application,
+  const applications = getApplications();
+
+  const selectedApplication = applications.find(
+    (application) => application.id === id,
   );
 
-  saveApplications(applications);
+  if (!selectedApplication) {
+    return false;
+  }
+
+  const updatedApplications = applications.map((application) => {
+    // Accept selected freelancer
+    if (application.id === id) {
+      return {
+        ...application,
+        status: "accepted",
+        workStatus: "accepted",
+      };
+    }
+
+    // Reject every other pending application for the same job
+    if (
+      application.jobId === selectedApplication.jobId &&
+      application.status === "pending"
+    ) {
+      return {
+        ...application,
+        status: "rejected",
+        rejectionReason:
+          "This job has already been assigned to another freelancer.",
+      };
+    }
+
+    return application;
+  });
+
+  saveApplications(updatedApplications);
+
+  // Close the job
+  closeJob(selectedApplication.jobId);
+
+  return true;
 }
 
 export function rejectApplication(id) {
   updateApplicationStatus(id, "rejected");
 }
-
 
 // Work Submission Functions
 
