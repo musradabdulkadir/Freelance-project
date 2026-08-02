@@ -41,7 +41,6 @@ import SubmitWork from "./pages/freelancer/SubmitWork";
 function App() {
   return (
     <Routes>
-      {/* Public Website */}
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
@@ -53,7 +52,6 @@ function App() {
         <Route path="freelancers/:id" element={<FreelancerDetails />} />
       </Route>
 
-      {/* Admin Dashboard */}
       <Route
         path="/admin"
         element={
@@ -71,7 +69,6 @@ function App() {
         <Route path="settings" element={<Settings />} />
       </Route>
 
-      {/* Client Dashboard */}
       <Route
         path="/client"
         element={
@@ -89,7 +86,6 @@ function App() {
         <Route path="profile" element={<Profile />} />
       </Route>
 
-      {/* Freelancer Dashboard */}
       <Route
         path="/freelancer"
         element={
